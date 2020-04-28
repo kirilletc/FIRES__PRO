@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Карта Пожаров PRO</title>
+    <link rel="stylesheet" type="text/css" href="css/material-design-iconic-font.min.css">
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- POP-UP BEGIN -->
+    <div class="container-contact100">
+        <div class="wrap-contact100">
+            <button class="btn-hide-contact100">
+            </button>
+            <div class="contact100-form-title">
+                <span>Получить доступ</span>
+            </div>
+            <form class="contact100-form validate-form ajax-contact-form" autocomplete="off" method="post" id="contact" name="contact" action="php/process.php">
+                <div class="wrap-input100 validate-input">
+                    <input id="name" class="input100" type="text" name="name" placeholder="ФИО *">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input">
+                    <input id="email" class="input100" type="text" name="email" placeholder="E-mail *">
+                </div>
+                <div class="wrap-input100 validate-input1">
+                    <input id="phone" class="input100" type="text" name="phone" placeholder="Телефон">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input1">
+                    <input id="org" class="input100" type="text" name="organization" placeholder="Наименование организации">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn">
+                        Отправить
+                    </button>
+                </div>
+                <div class="ajax-contact-form-response-success">Спасибо! Очень скоро Мы свяжемся с Вами</div>
+                <!--<div class="ajax-contact-form-response-error"></div>-->
+            </form>
+        </div>
+    </div>
+    <!-- POP-UP END -->
+    <header class="header">
+        <div class="header__logo"></div>
+        <div class="header__menu">
+            <div class="header__menu_item"><a data-easing="easeInOutQuad" href="#what">Что мы предлагаем</a></div>
+            <div class="header__menu_item"><a data-easing="easeInOutQuad" href="#how">Как получить сервис</a></div>
+            <div class="header__menu_item"><a data-easing="easeInOutQuad" href="#price">Стоимость</a></div>
+        </div>
+        <button class="header__menu_button btn-show-contact100">Получить доступ</button>
+    </header>
+    <div class="spacer__top"></div>
+    <section class="section1">
+        <div class="section1__left">
+            <div class="section1__left-in">
+                <h1 class="h1__1">Карта пожаров PRO</h1>
+                <h2 class="h2__1">Продвинутая платформа для оперативного спутникового мониторинга пожаров</h2>
+                <div class="section1__left-in-bottom">
+                    <button class="section_button" id="get1">Получить доступ</button>
+                    <div class="section1__left-in-bottom-pdf">
+                        <div class="pdf"></div>
+                        <span>Шаблон договора оферты</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a data-easing="easeInOutQuad" href="#what">
+            <div class="scroll-down svg" id="home-scroll-down">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_2" x="0px" y="0px" viewBox="0 0 25.166666 37.8704414" enable-background="new 0 0 25.166666 37.8704414" xml:space="preserve">
+                    <path class="stroke" fill="none" stroke="#c7c4b8" stroke-width="1.5" stroke-miterlimit="10" d="M12.5833445 36.6204414h-0.0000229C6.3499947 36.6204414 1.25 31.5204487 1.25 25.2871208V12.5833216C1.25 6.3499947 6.3499951 1.25 12.5833216 1.25h0.0000229c6.2333269 0 11.3333216 5.0999947 11.3333216 11.3333216v12.7037992C23.916666 31.5204487 18.8166714 36.6204414 12.5833445 36.6204414z"></path>
+                    <path class="scroller" fill="#c7c4b8" d="M13.0833359 19.2157116h-0.9192753c-1.0999985 0-1.9999971-0.8999996-1.9999971-1.9999981v-5.428606c0-1.0999994 0.8999987-1.9999981 1.9999971-1.9999981h0.9192753c1.0999985 0 1.9999981 0.8999987 1.9999981 1.9999981v5.428606C15.083334 18.315712 14.1833344 19.2157116 13.0833359 19.2157116z"></path>
+                </svg><i class="icon icon-arrow-down"></i>
+            </div>
+        </a>
+    </section>
+    <div class="spacer__section" id="what"></div>
+    <section class="section2">
+        <h1 class="h1__2">Что мы предлагаем</h1>
+        <div class="section2__in">
+            <div class="section2__in-half">
+                <div class="section2__in-half_item">
+                    <div class="section2__in-half_item-bullet"></div>
+                    <span>
+                        обновление данных о пожарах более 4 раз в сутки
+                    </span>
+                </div>
+                <div class="section2__in-half_item">
+                    <div class="section2__in-half_item-bullet"></div>
+                    <span>
+                        доступ к оперативным космическим снимкам
+                        MODIS, NPP, NOAA-20, на которых глобально
+                        показаны районы возгорания
+                    </span>
+                </div>
+                <div class="section2__in-half_item">
+                    <div class="section2__in-half_item-bullet"></div>
+                    <span>
+                        доступ к детальным космическим снимкам
+                        Landsat-8, Sentinel-2 на участки пожаров
+                    </span>
+                </div>
+                <div class="section2__in-half_item">
+                    <div class="section2__in-half_item-bullet"></div>
+                    <span>
+                        доступ к данным и картам прогноза погоды
+                    </span>
+                </div>
+                <div class="section2__in-half_item">
+                    <div class="section2__in-half_item-bullet"></div>
+                    <span>
+                        доступ к сводной пожарной статистике по
+                        регионам России
+                    </span>
+                </div>
+            </div>
+            <div class="section2__in-half">
+                <div class="section2__in-half_item">
+                    <div class="section2__in-half_item-bullet"></div>
+                    <span>
+                        возможность выгрузить данные о термоточках
+                        и контурах пожаров
+                    </span>
+                </div>
+                <div class="section2__in-half_item">
+                    <div class="section2__in-half_item-bullet"></div>
+                    <span>
+                        доступ к инструментам создания и загрузки
+                        пользовательских пространственных данных
+                    </span>
+                </div>
+                <div class="section2__in-half_item">
+                    <div class="section2__in-half_item-bullet"></div>
+                    <span>
+                        API для подключения данных во внешние
+                        системы и веб-сайты
+                    </span>
+                </div>
+                <div class="section2__in-half_item">
+                    <div class="section2__in-half_item-bullet"></div>
+                    <span>
+                        E-mail и СМС уведомления о новых пожарах
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="spacer__section" id="how"></div>
+    <section class="section3">
+        <h1 class="h1__3">Как получить сервис</h1>
+        <div class="section3__in">
+            <div class="section3__in-item-row-1">
+                <div class="section3__in-item__in_left group1"></div>
+                <div class="section3__in-item__in_right">Скачайте форму<br> договора-оферты на сайте</div>
+            </div>
+            <div class="section3__in-item-row-1">
+                <div class="section3__in-item__in_left group2"></div>
+                <div class="section3__in-item__in_right">Заполните договор согласно<br> <a>образцу</a></div>
+            </div>
+            <div class="section3__in-item-row-2">
+                <div class="section3__in-item__in_left group3"></div>
+                <div class="section3__in-item__in_right">Воспользуйтесь формой связи с нами
+                    <span>
+                        Просто нажмите на <a id="get2">Получить доступ</a>,
+                        заполните поля формы, приложите
+                        заполненный договор и кликните
+                        на <a id="get3">Отправить заявку</a>
+                    </span>
+                </div>
+            </div>
+            <div class="section3__in-item-row-2">
+                <div class="section3__in-item__in_left group4"></div>
+                <div class="section3__in-item__in_right">
+                    Мы рассмотрим заявку
+                    <span>
+                        Наши специалисты рассмотрят заявку и выставят в ответном письме счет на оплату или свяжутся с Вами в случае возникновения вопросов
+                    </span>
+                </div>
+            </div>
+            <div class="section3__in-item-row-3">
+                <div class="section3__in-item__in_left group5"></div>
+                <div class="section3__in-item__in_right">
+                    Вы получите реквизиты доступа
+                    <span>
+                        После оплаты сервиса в течение суток в ответном письме Вы получите все реквизиты доступа к персональной версии Карты пожаров и комплект подписанных документов
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="spacer__section" id="price"></div>
+    <section class="section4">
+        <div class="section4__in">
+            <h1 class="h1__4">Сколько это <span>стоит</span></h1>
+            <h2 class="h2__4">Сервис распростроняется по подписке</h2>
+            <div class="section4__in-table">
+                <div class="section4__in-table-row">
+                    <div class="section4__in-table-col-1">
+                        <div class="section4__in-table-col1-bullet "></div>
+                        <span>1 неделя</span>
+                    </div>
+                    <div class="dottes"></div>
+                    <div class="section4__in-table-col-1">
+                        <span>30 000 руб.</span>
+                    </div>
+                </div>
+                <div class="section4__in-table-row">
+                    <div class="section4__in-table-col-1">
+                        <div class="section4__in-table-col1-bullet "></div>
+                        <span>1 месяц</span>
+                    </div>
+                    <div class="dottes"></div>
+                    <div class="section4__in-table-col-1">
+                        <span>100 000 руб.</span>
+                    </div>
+                </div>
+                <div class="section4__in-table-row">
+                    <div class="section4__in-table-col-1">
+                        <div class="section4__in-table-col1-bullet "></div>
+                        <span>4 месяца</span>
+                    </div>
+                    <div class="dottes"></div>
+                    <div class="section4__in-table-col-1">
+                        <span>300 000 руб.</span>
+                    </div>
+                </div>
+                <div class="section4__in-table-row">
+                    <div class="section4__in-table-col-1">
+                        <div class="section4__in-table-col1-bullet "></div>
+                        <span>6 месяцев</span>
+                    </div>
+                    <div class="dottes"></div>
+                    <div class="section4__in-table-col-1">
+                        <span>450 000 руб.</span>
+                    </div>
+                </div>
+                <div class="section4__in-table-row">
+                    <div class="section4__in-table-col-1">
+                        <div class="section4__in-table-col1-bullet "></div>
+                        <span>1 год</span>
+                    </div>
+                    <div class="dottes"></div>
+                    <div class="section4__in-table-col-1">
+                        <span>900 000 руб.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="section4__border"></div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__in">
+            <div class="footer__row-1">
+                <div class="logo_bottom"></div>
+                <div class="footer__row-1_right">
+                    108811, г. Москва, 22-ой км. Киевского шоссе,
+                    домовладение 4, Бизнес-парк «Румянцево»,
+                    корп. А, 8 подъезд, 8 этаж, офис 819А
+                    Телефон: <a href="tel:+7 (495) 739-73-85">+7 (495) 739-73-85</a>
+                </div>
+            </div>
+            <div class="footer__row-2">
+                <div class="footer__row-2__left">
+                    <a class="face"></a>
+                    <a class="vk"></a>
+                    <a class="twitter"></a>
+                    <a class="you"></a>
+                </div>
+                <a href="mailto:info@scanex.ru" class="footer__row-2__right">info@scanex.ru</a>
+            </div>
+            <div class="footer__row-3">
+                &copy;<script type="text/javascript">
+                document.write(new Date().getFullYear());
+                </script> Группа компаний «СКАНЭКС». Все права защищены.
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0/dist/smooth-scroll.polyfills.min.js"></script>
+    <script>
+    var scroll = new SmoothScroll('a[href*="#"]', {
+        speed: 700,
+        speedAsDuration: true
+    });
+    </script>
+    <script>
+    $('.ajax-contact-form').on('submit', function(e) {
+        e.preventDefault();
+        var $form = $(this);
+        var $responseSuccess = $form.find('.ajax-contact-form-response-success');
+        var $responseError = $form.find('.ajax-contact-form-response-error');
+        $.ajax({
+            type: 'POST',
+            url: $form.attr('action'),
+            data: $form.serialize(),
+            success: function(response) {
+                response = JSON.parse(response);
+                if (response.type && response.type === 'success') {
+                    $responseError.hide();
+                    $responseSuccess.html(response.response).show();
+                    $form[0].reset();
+                    setTimeout(function() {
+                        $('.container-contact100').fadeOut(300);
+                    }, 5000);
+                } else {
+                    $responseSuccess.hide();
+                    $responseError.html(response.response).show();
+                }
+            },
+            error: function(response) {
+                $responseSuccess.hide();
+                $responseError.html(response.responseText).show();
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>
