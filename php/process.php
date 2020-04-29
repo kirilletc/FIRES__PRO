@@ -15,7 +15,7 @@ class Ajax_Contact_Form {
      *
      * @var string
      */
-    protected $address_destination = 'haibrahmanov@scanex.ru';
+    protected $address_destination = 'services@scanex.ru';
     /**
      * Message subject
      *

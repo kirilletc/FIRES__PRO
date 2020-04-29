@@ -383,6 +383,7 @@ section.section2 {
         margin-right: 40px;
         position: relative;
         right: 0;
+        display: block;
     }
 
     .scroll-down.svg svg {
@@ -550,6 +551,7 @@ section.section2 {
         margin-right: 40px;
         position: relative;
         right: 0;
+        display: block;
     }
 
     .scroll-down.svg svg {
@@ -694,6 +696,7 @@ section.section2 {
         margin-right: 0;
         position: relative;
         right: 23px;
+        display: block;
     }
 
     .scroll-down.svg svg {
@@ -856,8 +859,6 @@ section.section3 {
 .section4__in-table-col-1 span {
     font-style: normal;
     font-weight: bold;
-    font-size: 18px;
-    line-height: 22px;
     color: #F6F6F6;
 }
 
@@ -1390,6 +1391,13 @@ iframe {
         margin-right: 0;
         font-size: 25px;
         max-width: inherit;
+        bottom: 0;
+        position: relative;
+    }
+
+    .section4__in-table-col-1 span {
+        font-size: 18px;
+        line-height: 22px;
     }
 }
 
@@ -1432,6 +1440,68 @@ iframe {
         margin-right: auto;
         font-size: 18px;
         max-width: 252px;
+        bottom: 0;
+        position: relative;
+    }
+
+    .section4__in-table-col-1 span {
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
+@media (max-width: 327px) {
+    .ajax-contact-form-response-success {
+        margin-bottom: 1em;
+        margin-top: 1em;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 18px;
+        max-width: 252px;
+        bottom: 132px;
+        position: relative;
+    }
+
+    h1.h1__1 {
+        font-size: 23px;
+        line-height: 27px;
+        margin: 190px 0 50px 0;
+    }
+
+    h1.h1__2 {
+        font-size: 35px;
+        line-height: 115%;
+    }
+
+    h1.h1__3 {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 35px;
+        line-height: 115%;
+        text-align: center;
+        color: #000000;
+        margin: 0 0 60px 0;
+    }
+
+    h1.h1__4 {
+        font-size: 35px;
+        line-height: 70px;
+    }
+
+    .section2__in-half_item-bullet {
+        width: 47px;
+    }
+
+    .section3__in-item__in_left {
+        margin-right: 0;
+        position: relative;
+        right: 23px;
+        display: none;
+    }
+
+    .section4__in-table-col-1 span {
+        font-size: 15px;
+        line-height: 22px;
     }
 }
 
