@@ -1,41 +1,36 @@
 <?php
-$recipient_email    = "services@scanex.ru"; //recepient
+$recipient_email    = "kvolkov@yandex.ru"; //recepient
 $from_email         = "info@scanexacs.nichost.ru"; //from email using site domain.
 
 
-if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
-	die('Sorry Request must be Ajax POST'); //exit script
-}
-
 if($_POST){
-    
-    $subject        = "п≈п╟п©я─п╬я│ я┐я│п╩я┐пЁп╦ п п╟я─я┌п╟ п÷п╬п╤п╟я─п╬п╡ PRO c я│п╟п╧я┌п╟ pro.fires.ru";
-
-    $name 	        = filter_var($_POST["name"], FILTER_SANITIZE_STRING); //capture sender name
-    $email 	        = filter_var($_POST["email"], FILTER_SANITIZE_STRING); //capture sender email
-    $phone          = filter_var($_POST["phone"], FILTER_SANITIZE_NUMBER_INT);
-    $org            = filter_var($_POST["organization"], FILTER_SANITIZE_STRING);
+    $sender_name    = filter_var($_POST["name"], FILTER_SANITIZE_STRING); //capture sender name
+    $sender_email   = filter_var($_POST["email"], FILTER_SANITIZE_STRING); //capture sender email
+    $country_code   = filter_var($_POST["phone1"], FILTER_SANITIZE_NUMBER_INT);
+    $phone_number   = filter_var($_POST["phone2"], FILTER_SANITIZE_NUMBER_INT);
+    $subject        = "Запрос услуги Карта Пожаров PRO c сайта pro.fires.ru";
+    $message        = filter_var($_POST["message"], FILTER_SANITIZE_STRING); //capture message
 
     $attachments = $_FILES['file_attach'];
     
-	
+    
     //php validation, exit outputting json string
-    if(strlen($name)<4){
-        print json_encode(array('type'=>'error', 'text' => 'Name is too short or empty!'));
+    if(strlen($sender_name)<4){
+        print json_encode(array('type'=>'error', 'text' => 'Имя слишком короткое'));
         exit;
     }
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){ //email validation
-        print json_encode(array('type'=>'error', 'text' => 'Please enter a valid email!'));
+    if(!filter_var($sender_email, FILTER_VALIDATE_EMAIL)){ //email validation
+        print json_encode(array('type'=>'error', 'text' => 'Пожалуйста введите корректный Email'));
         exit;
     }
-    // if(!$phone){ //check for valid numbers in phone number field
-    //     print json_encode(array('type'=>'error', 'text' => 'Enter only digits in phone number'));
-    //     exit;
-    // }
-    // if(strlen($subject)<3){ //check emtpy subject
-    //     print json_encode(array('type'=>'error', 'text' => 'Subject is required'));
-    //     exit;
-    // }
+    if(!$phone_number){ //check for valid numbers in phone number field
+        print json_encode(array('type'=>'error', 'text' => 'В номере телефона должны быт только цифры'));
+        exit;
+    }
+    if(strlen($subject)<3){ //check emtpy subject
+        print json_encode(array('type'=>'error', 'text' => 'Subject is required'));
+        exit;
+    }
     // if(strlen($message)<3){ //check emtpy message
     //     print json_encode(array('type'=>'error', 'text' => 'Too short message! Please enter something.'));
     //     exit;
@@ -45,17 +40,20 @@ if($_POST){
     $file_count = count($attachments['name']); //count total files attached
     $boundary = md5("sanwebe.com"); 
     
-	//construct a message body to be sent to recipient
-	$message_body =  "п≤п╪я▐: $name\n";
-	$message_body .=  "Email: $email\n";
-	$message_body .=  "п╒п╣п╩п╣я└п╬п╫: $phone\n";
-    $message_body .=  "п·я─пЁп╟п╫п╦п╥п╟я├п╦я▐: $org\n";
-	
+    //construct a message body to be sent to recipient
+    $message_body =  "Message from $sender_name\n";
+    $message_body .=  "------------------------------\n";
+    $message_body .=  "$message\n";
+    $message_body .=  "------------------------------\n";
+    $message_body .=  "$sender_name\n";
+    $message_body .=  "$sender_email\n";
+    $message_body .=  "$country_code$phone_number\n";
+    
     if($file_count > 0){ //if attachment exists
         //header
         $headers = "MIME-Version: 1.0\r\n"; 
         $headers .= "From:".$from_email."\r\n"; 
-        $headers .= "Reply-To: ".$email."" . "\r\n";
+        $headers .= "Reply-To: ".$sender_email."" . "\r\n";
         $headers .= "Content-Type: multipart/mixed; boundary = $boundary\r\n\r\n"; 
         
         //message text
@@ -77,7 +75,7 @@ if($_POST){
                     4=>"No file was uploaded", 
                     6=>"Missing a temporary folder" ); 
                     print  json_encode( array('type'=>'error',$mymsg[$attachments['error'][$x]]) ); 
-					exit;
+                    exit;
                 }
                 
                 //get file info
@@ -102,7 +100,7 @@ if($_POST){
 
     }else{ //send plain email otherwise
        $headers = "From:".$from_email."\r\n".
-        "Reply-To: ".$email. "\n" .
+        "Reply-To: ".$sender_email. "\n" .
         "X-Mailer: PHP/" . phpversion();
         $body = $message_body;
     }
@@ -111,10 +109,9 @@ if($_POST){
     if($sentMail) //output success or failure messages
     {       
         print json_encode(array('type'=>'done', 'text' => 'Thank you for your email'));
-		exit;
+        exit;
     }else{
         print json_encode(array('type'=>'error', 'text' => 'Could not send mail! Please check your PHP mail configuration.'));  
-		exit;
+        exit;
     }
 }
-?>

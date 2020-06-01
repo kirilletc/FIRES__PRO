@@ -33,7 +33,7 @@ header.header {
     width: 302px;
     height: 34px;
     display: block;
-    cursor: default;
+    cursor: pointer;
     transition: all 0.23s ease;
 }
 
@@ -1359,11 +1359,11 @@ iframe {
         width: 962px;
         height: 729px;
         margin: 40px auto;
-        padding: 70px 115px;
+        padding: 50px 115px;
     }
 
     .container-contact100-form-btn {
-        padding-top: 70px;
+        padding-top: 57px;
         justify-content: flex-start;
     }
 
@@ -1778,4 +1778,38 @@ textarea.input100 {
     padding: 0.1em 0.7em 0.1em 0.7em;
     color: #333;
     display: none;
+}
+
+label.label__file {
+    color: #adadad;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #7B8796;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+    margin-left: 11px;
+    margin-top: 11px;
+}
+
+ul#lightgallery {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: space-between;
+    align-items: center;
+    width: 1170px;
+    margin: auto;
+    flex-direction: row;
+    background: rgba(0,0,0,0.04);
+    padding: 100px;
+    text-align: center;
+}
+
+ul#lightgallery li {
+    margin: 23px;
+    list-style: none;
 }

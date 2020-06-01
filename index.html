@@ -7,6 +7,8 @@
     <title>Карта Пожаров PRO</title>
     <link rel="stylesheet" type="text/css" href="css/material-design-iconic-font.min.css">
     <link href="css/style.css" rel="stylesheet" />
+    <link href="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/css/lightgallery.css" rel="stylesheet">
+        
 </head>
 
 <body>
@@ -18,7 +20,7 @@
             <div class="contact100-form-title">
                 <span>Получить доступ</span>
             </div>
-            <form class="contact100-form validate-form ajax-contact-form" autocomplete="off" method="post" id="contact" name="contact" action="php/process.php">
+            <form class="contact100-form validate-form ajax-contact-form" autocomplete="off" id="contact_form" method="post" action="php/process.php">
                 <div class="wrap-input100 validate-input">
                     <input id="name" class="input100" type="text" name="name" placeholder="ФИО *">
                     <span class="focus-input100"></span>
@@ -34,11 +36,16 @@
                     <input id="org" class="input100" type="text" name="organization" placeholder="Наименование организации">
                     <span class="focus-input100"></span>
                 </div>
+                <div>
+                    <label class="label__file" for="file">Прикрепите файл в формате (.doc, .docx, .pdf)</label>
+                    <input type="file" id="file" name="file_attach[]" multiple>
+                </div>
                 <div class="container-contact100-form-btn">
-                    <button class="contact100-form-btn">
+                    <button class="contact100-form-btn" type="submit">
                         Отправить
                     </button>
                 </div>
+                <!--<div id="contact_results" class="ajax-contact-form-response-success"></div>-->
                 <div class="ajax-contact-form-response-success">Спасибо! Очень скоро Мы свяжемся с Вами</div>
                 <!--<div class="ajax-contact-form-response-error"></div>-->
             </form>
@@ -46,11 +53,13 @@
     </div>
     <!-- POP-UP END -->
     <header class="header">
-        <div class="header__logo"></div>
+        <div class="header__logo" onclick="location.href='https://fires.ru/';"></div>
         <div class="header__menu">
             <div class="header__menu_item"><a data-easing="easeInOutQuad" href="#what">Что мы предлагаем</a></div>
             <div class="header__menu_item"><a data-easing="easeInOutQuad" href="#how">Как получить сервис</a></div>
+            <div class="header__menu_item"><a data-easing="easeInOutQuad" href="#gallery">Галерея</a></div>
             <div class="header__menu_item"><a data-easing="easeInOutQuad" href="#price">Стоимость</a></div>
+            
         </div>
         <button class="header__menu_button btn-show-contact100">Получить доступ</button>
     </header>
@@ -62,10 +71,12 @@
                 <h2 class="h2__1">Продвинутая платформа для оперативного спутникового мониторинга пожаров</h2>
                 <div class="section1__left-in-bottom">
                     <button class="section_button" id="get1">Получить доступ</button>
-                    <div class="section1__left-in-bottom-pdf">
-                        <div class="pdf"></div>
-                        <span>Шаблон договора оферты</span>
-                    </div>
+                    <a href="Шаблон_Договор_Карта_пожаров_PRO.docx">
+                        <div class="section1__left-in-bottom-pdf">
+                            <div class="pdf"></div>
+                            <span>Шаблон договора оферты</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -110,20 +121,27 @@
                         доступ к данным и картам прогноза погоды
                     </span>
                 </div>
+                <!--<div class="section2__in-half_item">-->
+                <!--    <div class="section2__in-half_item-bullet"></div>-->
+                <!--    <span>-->
+                <!--        доступ к сводной пожарной статистике по-->
+                <!--        регионам России-->
+                <!--    </span>-->
+                <!--</div>-->
+            </div>
+            <div class="section2__in-half">
+                <!--<div class="section2__in-half_item">-->
+                <!--    <div class="section2__in-half_item-bullet"></div>-->
+                <!--    <span>-->
+                <!--        возможность выгрузить данные о термоточках-->
+                <!--        и контурах пожаров-->
+                <!--    </span>-->
+                <!--</div>-->
                 <div class="section2__in-half_item">
                     <div class="section2__in-half_item-bullet"></div>
                     <span>
                         доступ к сводной пожарной статистике по
                         регионам России
-                    </span>
-                </div>
-            </div>
-            <div class="section2__in-half">
-                <div class="section2__in-half_item">
-                    <div class="section2__in-half_item-bullet"></div>
-                    <span>
-                        возможность выгрузить данные о термоточках
-                        и контурах пожаров
                     </span>
                 </div>
                 <div class="section2__in-half_item">
@@ -159,7 +177,7 @@
             </div>
             <div class="section3__in-item-row-1">
                 <div class="section3__in-item__in_left group2"></div>
-                <div class="section3__in-item__in_right">Заполните договор согласно<br> <a>образцу</a></div>
+                <div class="section3__in-item__in_right">Заполните договор согласно<br> <a href="Шаблон_Договор_Карта_пожаров_PRO.docx">образцу</a></div>
             </div>
             <div class="section3__in-item-row-2">
                 <div class="section3__in-item__in_left group3"></div>
@@ -192,6 +210,37 @@
             </div>
         </div>
     </section>
+    <div class="spacer__section" id="gallery"></div>
+    <h1 class="h1__3">Галерея</h1>
+    <div class="demo-gallery">
+        <ul id="lightgallery" class="list-unstyled row">
+            <li data-src="img/1.png" data-sub-html="Отображение детальных космических снимков">
+                <a href="">
+                    <img class="img-responsive" src="img/thumb-1.jpg" title="Отображение детальных космических снимков">
+                </a>
+            </li>
+            <li data-src="img/2.png" data-sub-html="Доступ к погодным данным">
+                <a href="">
+                    <img class="img-responsive" src="img/thumb-2.jpg" title="Доступ к погодным данным">
+                </a>
+            </li>
+            <li data-src="img/3.png" data-sub-html="Отображение пожарной статистики">
+                <a href="">
+                    <img class="img-responsive" src="img/thumb-3.jpg" title="Отображение пожарной статистики">
+                </a>
+            </li>
+            <li data-src="img/4.png" data-sub-html="Доступ к инструментам ГИС">
+                <a href="">
+                    <img class="img-responsive" src="img/thumb-4.jpg" title="Доступ к инструментам ГИС">
+                </a>
+            </li>
+            <li data-src="img/5.png" data-sub-html="Еще больше спутниковых данных и расчетов пожаров">
+                <a href="">
+                    <img class="img-responsive" src="img/thumb-5.jpg" title="Еще больше спутниковых данных и расчетов пожаров">
+                </a>
+            </li>
+        </ul>
+    </div>
     <div class="spacer__section" id="price"></div>
     <section class="section4">
         <div class="section4__in">
@@ -265,10 +314,10 @@
             </div>
             <div class="footer__row-2">
                 <div class="footer__row-2__left">
-                    <a class="face"></a>
-                    <a class="vk"></a>
-                    <a class="twitter"></a>
-                    <a class="you"></a>
+                    <a href="https://www.facebook.com/scanexgroup/" target="_blank" class="face"></a>
+                    <a href="https://vk.com/scanex" target="_blank" class="vk"></a>
+                    <a href="https://twitter.com/scanex_ru" target="_blank" class="twitter"></a>
+                    <a href="https://www.youtube.com/user/scanexru" target="_blank" class="you"></a>
                 </div>
                 <a href="mailto:services@scanex.ru" class="footer__row-2__right">services@scanex.ru</a>
             </div>
@@ -290,35 +339,87 @@
     });
     </script>
     <script>
-    $('.ajax-contact-form').on('submit', function(e) {
-        e.preventDefault();
-        var $form = $(this);
-        var $responseSuccess = $form.find('.ajax-contact-form-response-success');
-        var $responseError = $form.find('.ajax-contact-form-response-error');
-        $.ajax({
-            type: 'POST',
-            url: $form.attr('action'),
-            data: $form.serialize(),
-            success: function(response) {
-                response = JSON.parse(response);
-                if (response.type && response.type === 'success') {
-                    $responseError.hide();
-                    $responseSuccess.html(response.response).show();
-                    $form[0].reset();
+    var allowed_file_size = "1048576"; //1 MB allowed file size
+    var allowed_file_types = ['image/png', 'image/gif', 'image/jpeg', 'image/pjpeg',
+        'application/x-zip-compressed', 'application/pdf', 'application/msword',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    ]; //Allowed file types
+    var border_color = "#C2C2C2"; //initial input border color
+    var maximum_files = 2; //Maximum number of files allowed
+    $("#contact_form").submit(function(e) {
+        e.preventDefault(); //prevent default action 
+        proceed = true;
+        //simple input validation
+        $($(this).find("input[data-required=true], textarea[data-required=true]")).each(function() {
+            if (!$.trim($(this).val())) { //if this field is empty 
+                $(this).css('border-color', 'red'); //change border color to red   
+                proceed = false; //set do not proceed flag
+            }
+            //check invalid email
+            var email_reg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            if ($(this).attr("type") == "email" && !email_reg.test($.trim($(this).val()))) {
+                $(this).css('border-color', 'red'); //change border color to red   
+                proceed = false; //set do not proceed flag              
+            }
+        }).on("input", function() { //change border color to original
+            $(this).css('border-color', border_color);
+        });
+        //check file size and type before upload, works in all modern browsers
+        if (window.File && window.FileReader && window.FileList && window.Blob) {
+            var total_files_size = 0;
+            if (this.elements['file_attach[]'].files.length > maximum_files) {
+                alert("Can not select more than " + maximum_files + " file(s)");
+                proceed = false;
+            }
+            $(this.elements['file_attach[]'].files).each(function(i, ifile) {
+                if (ifile.value !== "") { //continue only if file(s) are selected
+                    if (allowed_file_types.indexOf(ifile.type) === -1) { //check unsupported file
+                        alert(ifile.name + " is not allowed!");
+                        proceed = false;
+                    }
+                    total_files_size = total_files_size + ifile.size; //add file size to total size
+                }
+            });
+            if (total_files_size > allowed_file_size) {
+                alert("Make sure total file size is less than 1 MB!");
+                proceed = false;
+            }
+        }
+        var post_url = $(this).attr("action"); //get form action url
+        var request_method = $(this).attr("method"); //get form GET/POST method
+        var form_data = new FormData(this); //Creates new FormData object
+        //if everything's ok, continue with Ajax form submit
+        if (proceed) {
+            $.ajax({ //ajax form submit
+                url: post_url,
+                type: request_method,
+                data: form_data,
+                dataType: "json",
+                contentType: false,
+                cache: false,
+                processData: false
+            }).done(function(res) { //fetch server "json" messages when done
+                if (res.type == "error") {
+                    $("#contact_results").html('<div class="error">' + res.text + "</div>");
+                }
+                if (res.type == "done") {
+                    // $("#contact_results").html('<div class="success">'+ res.text +"</div>");
+                    $('.ajax-contact-form-response-success').css("display", "block")
                     setTimeout(function() {
                         $('.container-contact100').fadeOut(300);
                     }, 5000);
-                } else {
-                    $responseSuccess.hide();
-                    $responseError.html(response.response).show();
                 }
-            },
-            error: function(response) {
-                $responseSuccess.hide();
-                $responseError.html(response.responseText).show();
-            }
-        });
+            });
+        }
     });
+    </script>
+    <script src="js/lightgallery.min.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js"></script>
+    <!-- lightgallery plugins -->
+    <script src="js/lg-thumbnail.min.js"></script>
+    <script src="js/lg-fullscreen.min.js"></script>
+    <script>
+    lightGallery(document.getElementById('lightgallery'));
     </script>
 </body>
 
