@@ -7,8 +7,7 @@
     <title>Карта Пожаров PRO</title>
     <link rel="stylesheet" type="text/css" href="css/material-design-iconic-font.min.css">
     <link href="css/style.css" rel="stylesheet" />
-    <link href="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/css/lightgallery.css" rel="stylesheet">
-        
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 </head>
 
 <body>
@@ -59,7 +58,6 @@
             <div class="header__menu_item"><a data-easing="easeInOutQuad" href="#how">Как получить сервис</a></div>
             <div class="header__menu_item"><a data-easing="easeInOutQuad" href="#gallery">Галерея</a></div>
             <div class="header__menu_item"><a data-easing="easeInOutQuad" href="#price">Стоимость</a></div>
-            
         </div>
         <button class="header__menu_button btn-show-contact100">Получить доступ</button>
     </header>
@@ -213,33 +211,18 @@
     <div class="spacer__section" id="gallery"></div>
     <h1 class="h1__3">Галерея</h1>
     <div class="demo-gallery">
-        <ul id="lightgallery" class="list-unstyled row">
-            <li data-src="img/1.png" data-sub-html="Отображение детальных космических снимков">
-                <a href="">
-                    <img class="img-responsive" src="img/thumb-1.jpg" title="Отображение детальных космических снимков">
-                </a>
-            </li>
-            <li data-src="img/2.png" data-sub-html="Доступ к погодным данным">
-                <a href="">
-                    <img class="img-responsive" src="img/thumb-2.jpg" title="Доступ к погодным данным">
-                </a>
-            </li>
-            <li data-src="img/3.png" data-sub-html="Отображение пожарной статистики">
-                <a href="">
-                    <img class="img-responsive" src="img/thumb-3.jpg" title="Отображение пожарной статистики">
-                </a>
-            </li>
-            <li data-src="img/4.png" data-sub-html="Доступ к инструментам ГИС">
-                <a href="">
-                    <img class="img-responsive" src="img/thumb-4.jpg" title="Доступ к инструментам ГИС">
-                </a>
-            </li>
-            <li data-src="img/5.png" data-sub-html="Еще больше спутниковых данных и расчетов пожаров">
-                <a href="">
-                    <img class="img-responsive" src="img/thumb-5.jpg" title="Еще больше спутниковых данных и расчетов пожаров">
-                </a>
-            </li>
-        </ul>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="img/1.png" class="slider-img"><span class="mini">Отображение детальных космических снимков</span></div>
+                <div class="swiper-slide"><img src="img/2.png" class="slider-img"><span class="mini">Доступ к погодным данным</span></div>
+                <div class="swiper-slide"><img src="img/3.png" class="slider-img"><span class="mini">Отображение пожарной статистики</span></div>
+                <div class="swiper-slide"><img src="img/4.png" class="slider-img"><span class="mini">Доступ к инструментам ГИС</span></div>
+                <div class="swiper-slide"><img src="img/5.png" class="slider-img"><span class="mini">Еще больше спутниковых данных и расчетов пожаров</span></div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
     </div>
     <div class="spacer__section" id="price"></div>
     <section class="section4">
@@ -287,15 +270,13 @@
                         <span>50 000 руб./мес.</span>
                     </div>
                 </div>
-              
             </div>
-             <h2 class="h2__4">НДС включен в стоимость подписки.<br>
-                               Академическим организациям предоставляется скидка в размере 30%</h2>
+            <h2 class="h2__4">НДС включен в стоимость подписки.<br>
+                Академическим организациям предоставляется скидка в размере 30%</h2>
             <div style="display:block; width: 100%; height:67px;"></div>
-                               
             <h2 class="h2__4"><span style="color:#ED592B">Акция!</span> Для всех, кто заключит договор до 31.08.2020г. включительно, <br>
-            стоимость подписки с пролонгацией на последующие годы будет составлять:</h2>
-                        <div class="section4__in-table">
+                стоимость подписки с пролонгацией на последующие годы будет составлять:</h2>
+            <div class="section4__in-table">
                 <div class="section4__in-table-row">
                     <div class="section4__in-table-col-1">
                         <div class="section4__in-table-col1-bullet "></div>
@@ -336,9 +317,8 @@
                         <span>30 000 руб./мес.</span>
                     </div>
                 </div>
-              
             </div>
-             <h2 class="h2__4">НДС включен в стоимость подписки.</h2>
+            <h2 class="h2__4">НДС включен в стоимость подписки.</h2>
             <div class="section4__border"></div>
         </div>
     </section>
@@ -454,13 +434,16 @@
         }
     });
     </script>
-    <script src="js/lightgallery.min.js"></script>
-    <script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js"></script>
-    <!-- lightgallery plugins -->
-    <script src="js/lg-thumbnail.min.js"></script>
-    <script src="js/lg-fullscreen.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <!-- Initialize Swiper -->
     <script>
-    lightGallery(document.getElementById('lightgallery'));
+    var swiper = new Swiper('.swiper-container', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
     </script>
 </body>
 
