@@ -907,7 +907,7 @@ section.section4 {
 }
 
 .dottes {
-    width: calc(100% - 267px);
+    width: calc(100% - 317px);
     border-bottom: 5px dotted #C4C4C4;
     height: 2px;
 }
